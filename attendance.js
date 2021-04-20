@@ -2,9 +2,11 @@ window.onload = () => {
   const targetElements = []
   const delayedElements = document.querySelectorAll("font[style='font-weight: bold;color: #ff8c00;']");
   const absenceElements = document.querySelectorAll("font[style='font-weight: bold;color: black;']");
+  const leaveEarlyElements = document.querySelectorAll("font[style='font-weight: bold;color: green;']");
 
   targetElements.push(...Array.from(delayedElements));
   targetElements.push(...Array.from(absenceElements));
+  targetElements.push(...Array.from(leaveEarlyElements));
 
   targetElements.forEach(element => {
     const dateArray = [...element.parentElement.parentElement.children[0].children[0].textContent.matchAll(/\d\d/g)];
